@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Developer Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateo Lopez Moncaleano | Portfolio</title>
+  <!-- CSS path -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <h1>Hello, I'm Mateo Lopez Moncaleano</h1>
-  <p>Developer focused on C++, C# web dev.</p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/Kenobi127/HackMT-2024-Skylighter-1">Project 1</a></li>
-    <li><a href="https://github.com/Kenobi127/Skylighter2">Project 2</a></li>
-    <li><a href="https://github.com/Kenobi127/Platformer_Knight_Godot">Project 3</a></li>
-  </ul>
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li data-section="home" class="active">Home</li>
+        <li data-section="projects">Projects</li>
+        <li data-section="about">About</li>
+        <li data-section="contact">Contact</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+      <!-- Home Section -->
+      <section id="home" class="active">
+        <h1>Mateo Lopez Moncaleano</h1>
+        <p>text.</p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+          <div class="project-card">
+            <a href="https://github.com/Kenobi127/HackMT2024-Skylighter1" target="_blank">HackMT2024-Skylighter1</a>
+            <p>Hackathon 2D pixel-platformer built during HackMT 2024, focused on quick prototyping and gameplay mechanics.</p>
+          </div>
+          <div class="project-card">
+            <a href="https://github.com/Kenobi127/Skylighter2" target="_blank">Skylighter2</a>
+            <p>Continuation of the game.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I enjoy...
+        </p>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:mateolm1207@gmail.com">mateolm1207@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Kenobi127" target="_blank">github.com/Kenobi127</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/mateo-lopez-moncaleano-94970b257" target="_blank">linkedin.com/in/mateo-lopez-moncaleano-94970b257</a></p>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Mateo Lopez Moncaleano</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Update JS path -->
+  <script src="backend/main.js"></script>
 </body>
 </html>

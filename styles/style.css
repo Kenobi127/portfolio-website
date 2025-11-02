@@ -1,0 +1,161 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===== Container Layout ===== */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 200px;
+  background-color: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #4b4b7f;
+}
+
+/* ===== Main Content ===== */
+.content {
+  margin-left: 200px;
+  flex: 1;
+  padding: 40px;
+  transition: all 0.3s;
+}
+
+section {
+  display: none; /* hide all sections by default */
+}
+
+section.active {
+  display: block; /* show active section */
+}
+
+/* ===== Home Section ===== */
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#home p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* ===== Projects Section ===== */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 300px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-card a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e1e2f;
+}
+
+.project-card p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== About Section ===== */
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== Contact Section ===== */
+#contact a {
+  color: #1e1e2f;
+  text-decoration: underline;
+}
+
+#contact p {
+  margin-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #777;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .project-list {
+    justify-content: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
