@@ -1,4 +1,4 @@
-/* ===== General Reset ===== */
+/* ---------- Reset / Global ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -8,20 +8,21 @@
 
 body, html {
   height: 100%;
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   color: #333;
 }
 
-/* ===== Container Layout ===== */
+/* ---------- Layout ---------- */
 .container {
-  display: flex;
+  display: flex;       /* sidebar + main content */
   min-height: 100vh;
+  flex-direction: column; /* stack content + footer vertically */
 }
 
-/* ===== Sidebar ===== */
+/* ---------- Sidebar ---------- */
 .sidebar {
   width: 200px;
-  background-color: #1e1e2f;
+  background: #1e1e2f;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -41,52 +42,57 @@ body, html {
   transition: background 0.2s;
 }
 
+/* highlight on hover or active */
 .sidebar li:hover,
 .sidebar li.active {
-  background-color: #4b4b7f;
+  background: #4b4b7f;
+  font-weight: bold;
 }
 
-/* ===== Main Content ===== */
+/* ---------- Main content ---------- */
 .content {
-  margin-left: 200px;
+  margin-left: 200px;  /* leave space for sidebar */
   flex: 1;
   padding: 40px;
   transition: all 0.3s;
 }
 
+/* hide sections by default, show only active */
 section {
-  display: none; /* hide all sections by default */
+  display: none;
 }
-
 section.active {
-  display: block; /* show active section */
+  display: block;
 }
 
-/* ===== Home Section ===== */
+/* ---------- Home ---------- */
 #home h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-
 #home p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   line-height: 1.4;
 }
 
-/* ===== Projects Section ===== */
+/* ---------- Projects ---------- */
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; /* space between cards */
 }
 
 .project-card {
-  background-color: #fff;
+  display: block;        /* makes <a> behave like a block */
+  background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   width: 300px;
+  text-decoration: none; /* remove underline */
+  color: #1e1e2f;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -95,25 +101,23 @@ section.active {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.project-card a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #1e1e2f;
+.project-card h3 {
+  margin-bottom: 8px;
 }
 
 .project-card p {
-  margin-top: 8px;
   font-size: 0.95rem;
   color: #555;
+  line-height: 1.4;
 }
 
-/* ===== About Section ===== */
+/* ---------- About ---------- */
 #about p {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* ===== Contact Section ===== */
+/* ---------- Contact ---------- */
 #contact a {
   color: #1e1e2f;
   text-decoration: underline;
@@ -123,9 +127,10 @@ section.active {
   margin-bottom: 10px;
 }
 
-/* ===== Footer ===== */
+/* ---------- Footer ---------- */
 footer {
   margin-top: 40px;
+  margin-bottom: 20px;
   padding-top: 20px;
   border-top: 1px solid #ccc;
   font-size: 0.9rem;
@@ -133,10 +138,10 @@ footer {
   color: #777;
 }
 
-/* ===== Responsive ===== */
+/* ---------- Responsive / Mobile ---------- */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    flex-direction: column;  /* stack sidebar and content */
   }
 
   .sidebar {
@@ -156,6 +161,6 @@ footer {
   }
 
   .project-card {
-    width: 90%;
+    width: 90%; /* cards full width on mobile */
   }
 }

@@ -1,27 +1,23 @@
-// Select all sidebar items and content sections
+// Grab all sidebar items and all sections
 const menuItems = document.querySelectorAll('.sidebar li');
-const sections = document.querySelectorAll('main .content section');
+const sections = document.querySelectorAll('section'); // simpler selector
 
-// Function to show a section
-function showSection(sectionId) {
-  sections.forEach(section => {
-    section.classList.remove('active'); // hide all sections
-  });
-  const target = document.getElementById(sectionId);
-  if (target) target.classList.add('active'); // show the clicked section
+// Function to show one section and hide the rest
+function showSection(id) {
+  sections.forEach(sec => sec.classList.remove('active')); // hide all
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');            // show only this
 }
 
-// Handle menu item clicks
+// Add click events to menu items
 menuItems.forEach(item => {
   item.addEventListener('click', () => {
-    // Remove 'active' class from all menu items
-    menuItems.forEach(i => i.classList.remove('active'));
 
-    // Add 'active' class to clicked item
+    // highlight selected menu item
+    menuItems.forEach(i => i.classList.remove('active'));
     item.classList.add('active');
 
-    // Show the corresponding section
-    const sectionId = item.getAttribute('data-section');
-    showSection(sectionId);
+    // show the correct section
+    showSection(item.dataset.section);
   });
 });
