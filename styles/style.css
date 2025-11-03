@@ -79,10 +79,15 @@ body, html {
   padding: 40px;
   transition: all 0.3s;
 }
+section h2 {
+  margin-bottom: 30px; /* space between the title and the content below */
+}
 
 /* hide sections by default, show only active */
 section {
   display: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 section.active {
   display: block;
@@ -103,25 +108,39 @@ section.active {
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* space between cards */
+  gap: 40px; /* space between cards */
+  justify-content: flex-start;
 }
 
 .project-card {
-  display: block;        /* makes <a> behave like a block */
-  background: #b4b4b4;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-decoration: none; /* remove underline */
-  color: #1e1e2f;
+  width: 350px;      
+  height: 350px;     
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-7px);
+  box-shadow: 0 6px 12px #000000;
+}
+
+.project-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: #00000099; /* semi-transparent black */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .project-card h3 {
