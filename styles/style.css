@@ -120,8 +120,8 @@ section.active {
 
 /*individual project cards*/
 .project-card {
-  width: 350px;      
-  height: 350px;     
+  width: 300px;      
+  height: 300px;     
   border-radius: 12px;
   overflow: hidden;
   position: relative;
